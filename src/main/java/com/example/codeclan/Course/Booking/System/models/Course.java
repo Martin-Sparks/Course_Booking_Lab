@@ -24,7 +24,7 @@ public class Course {
     private Integer rating;
 
     @JsonBackReference
-    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
     private List<Booking> bookings;
 
     public Course(String name, String city, Integer rating){

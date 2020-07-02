@@ -21,10 +21,13 @@ public class BookingController {
     public ResponseEntity getAllBookingsAndFilters(
             @RequestParam(required = false, name = "date") String date
     ){
-
+        if (date != null){
+            return new ResponseEntity(bookingRepository.findByDate(date), HttpStatus.OK);
+        }
 
         //Get all bookings
         return  new ResponseEntity(bookingRepository.findAll(), HttpStatus.OK);
     }
+
 
 }
