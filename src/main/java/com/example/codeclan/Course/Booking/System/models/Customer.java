@@ -26,12 +26,14 @@ public class Customer {
     @JsonBackReference
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
     private List<Booking> bookings;
+    private List<Course> courses;
 
     public Customer(String name, String hometown, Integer age){
         this.name = name;
         this.hometown = hometown;
         this.age = age;
         this.bookings = new ArrayList<>();
+        this.courses = new ArrayList<>();
     }
 
     public Customer(){
@@ -76,5 +78,17 @@ public class Customer {
 
     public void setBookings(List<Booking> bookings) {
         this.bookings = bookings;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
     }
 }
