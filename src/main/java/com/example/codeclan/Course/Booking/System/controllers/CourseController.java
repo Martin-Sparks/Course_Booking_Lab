@@ -24,7 +24,6 @@ public class CourseController {
             return new ResponseEntity(courseRepository.findByName(name), HttpStatus.OK);
         }
 
-
         return new ResponseEntity(courseRepository.findAll(), HttpStatus.OK);
     }
 

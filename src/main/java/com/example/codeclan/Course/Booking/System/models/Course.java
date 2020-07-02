@@ -3,6 +3,7 @@ package com.example.codeclan.Course.Booking.System.models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -30,6 +31,7 @@ public class Course {
         this.name = name;
         this.city = city;
         this.rating = rating;
+        this.bookings = new ArrayList<>();
     }
 
     public Course(){
